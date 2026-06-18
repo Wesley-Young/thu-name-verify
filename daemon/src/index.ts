@@ -26,9 +26,18 @@ app.get(
   }),
 );
 
-serve({
+const server = serve({
   fetch: app.fetch,
   port: 8000,
 });
 
 fraqCtx.start();
+
+process.on('SIGINT', async () => {
+  console.log('Shutting down gracefully...');
+  await fraqCtx.stop();
+  server.close(() => {
+    console.log('Server closed. Exiting process.');
+    process.exit(0);
+  });
+});
