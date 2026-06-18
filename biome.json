@@ -61,7 +61,7 @@
       }
     },
     {
-      "includes": [],
+      "includes": ["**/*.svg"],
       "formatter": {
         "enabled": false
       },

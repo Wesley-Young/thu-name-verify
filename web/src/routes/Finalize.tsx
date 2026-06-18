@@ -20,7 +20,9 @@ function Finalize() {
       <Typography>
         请在新生群中用 QQ 号 <b>{uin}</b> 发送：
       </Typography>
-      <Typography sx={{ fontSize: '1.2rem', textAlign: 'center', backgroundColor: '#f0f0f0', padding: 1, borderRadius: 2 }}>
+      <Typography
+        sx={{ fontSize: '1.2rem', textAlign: 'center', backgroundColor: '#f0f0f0', padding: 1, borderRadius: 2 }}
+      >
         <code>verify {requestId}</code>
       </Typography>
       <Typography>发送完毕后，即可完成验证。</Typography>
