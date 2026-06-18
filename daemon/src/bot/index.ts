@@ -53,7 +53,7 @@ groups.router
       })
       .run();
     uinTokenStorage.delete(session.raw.sender_id);
-    await session.reply(`入学年份为 ${joinYear} 的 ${userInfo.realName} 同学，绑定成功！`, {
+    await session.reply(`入学年份为【${joinYear}】的【${userInfo.realName}】同学，绑定成功！`, {
       withQuote: true,
     });
   });

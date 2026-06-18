@@ -10,7 +10,7 @@
   "author": "",
   "dependencies": {
     "@fraqjs/color-log": "^0.2.0",
-    "@fraqjs/fraq": "^0.10.0",
+    "@fraqjs/fraq": "^0.10.2",
     "@hono/node-server": "^2.0.5",
     "@hono/zod-validator": "^0.8.0",
     "@libsql/client": "^0.17.4",

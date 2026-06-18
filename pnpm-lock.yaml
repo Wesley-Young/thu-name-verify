@@ -221,10 +221,10 @@ importers:
     dependencies:
       '@fraqjs/color-log':
         specifier: ^0.2.0
-        version: 0.2.0(@fraqjs/fraq@0.10.0)
+        version: 0.2.0(@fraqjs/fraq@0.10.2)
       '@fraqjs/fraq':
-        specifier: ^0.10.0
-        version: 0.10.0
+        specifier: ^0.10.2
+        version: 0.10.2
       '@hono/node-server':
         specifier: ^2.0.5
         version: 2.0.5(hono@4.12.25)
@@ -930,8 +930,8 @@ packages:
     peerDependencies:
       '@fraqjs/fraq': ^0.3.3
 
-  '@fraqjs/fraq@0.10.0':
-    resolution: {integrity: sha512-kHu7K0ILXfEpnpv5R/1gQKR+kaSTKI0ogX++AMXIN6+kTj/67CkWzRF6Rc0PXyZxi/JHnCgnuovJ1vyUd9Srxw==}
+  '@fraqjs/fraq@0.10.2':
+    resolution: {integrity: sha512-rQkNMjw+/yRLciQraL7e0yzbkqeReViT6sZ4IPNPe5/y8nrcEOodhoWMVFLT1gXxGhAciuWNl9P9p+WMeisGYw==}
     engines: {node: '>=22'}
 
   '@hono/node-server@2.0.5':
@@ -2210,12 +2210,12 @@ snapshots:
 
   '@fontsource/roboto@5.2.10': {}
 
-  '@fraqjs/color-log@0.2.0(@fraqjs/fraq@0.10.0)':
+  '@fraqjs/color-log@0.2.0(@fraqjs/fraq@0.10.2)':
     dependencies:
-      '@fraqjs/fraq': 0.10.0
+      '@fraqjs/fraq': 0.10.2
       chalk: 5.6.2
 
-  '@fraqjs/fraq@0.10.0':
+  '@fraqjs/fraq@0.10.2':
     dependencies:
       mitt: 3.0.1
 
