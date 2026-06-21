@@ -26,16 +26,21 @@ register.get('/fire', (c) => {
 });
 
 register.get('/callback', async (c) => {
-  const callbackCode = c.req.query('code');
-  if (!callbackCode) {
-    return c.text('Missing code parameter', 400);
+  try {
+    const callbackCode = c.req.query('code');
+    if (!callbackCode) {
+      return c.text('Missing code parameter', 400);
+    }
+    const accessToken = await oauth.getOauthAccessToken(oauthAppId, oauthAppSecret, callbackCode, oauthRedirectUri);
+    const info = await oauth.getUserInfo(accessToken);
+    const reqId = randomUUID();
+    const base64Payload = Buffer.from(JSON.stringify(info)).toString('base64');
+    reqIdStorage.set(reqId, info);
+    return c.redirect(`/register?${new URLSearchParams({ requestId: reqId, base64Payload }).toString()}`);
+  } catch (error) {
+    console.error('Error during OAuth callback:', error);
+    return c.text(`Internal Server Error: ${error instanceof Error ? error.message : 'Unknown error'}`, 500);
   }
-  const accessToken = await oauth.getOauthAccessToken(oauthAppId, oauthAppSecret, callbackCode, oauthRedirectUri);
-  const info = await oauth.getUserInfo(accessToken);
-  const reqId = randomUUID();
-  const base64Payload = Buffer.from(JSON.stringify(info)).toString('base64');
-  reqIdStorage.set(reqId, info);
-  return c.redirect(`/register?${new URLSearchParams({ requestId: reqId, base64Payload }).toString()}`);
 });
 
 export const verifyRoute = register.post(
