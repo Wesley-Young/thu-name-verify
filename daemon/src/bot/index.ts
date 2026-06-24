@@ -96,7 +96,7 @@ groups.on('message_receive', async ({ data }) => {
 
   await groups.client.send_group_message({
     group_id: data.peer_id,
-    message: msg`${seg.mention(senderUin)} 您尚未绑定身份，请在网页端进行绑定。`,
+    message: msg`${seg.mention(senderUin)} 您尚未绑定身份，请在网页端 https://thu-name-verify.ntqqrev.org/ 进行绑定。`,
   });
   notifiedUsersAndInstants.set(senderUin, Date.now());
 });
